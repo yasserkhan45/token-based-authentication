@@ -15,7 +15,7 @@ class FlaskTest(unittest.TestCase):
     
     def test_author_status(self):
         tester = app.test_client(self)
-        response = tester.get("/authors")
+        response = tester.get("/author")
         statuscode = response.status_code
         self.assertEqual(statuscode, 200)
 
@@ -33,7 +33,7 @@ class FlaskTest(unittest.TestCase):
     
     def test_authors_data(self):
         tester = app.test_client(self)
-        response = tester.get("/author")
+        response = tester.get("/authors")
         self.assertTrue(b'message' in response.data)
 
     def test_author_data(self):
